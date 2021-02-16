@@ -13,6 +13,7 @@ import (
 	"errors"
 
 	"io"
+	"fmt"
 
 	"github.com/eacsuite/eacd/wire"
 )
@@ -213,6 +214,7 @@ func NewFromRawBytes(r io.Reader, b64 bool) (*Packet, error) {
 	if err != nil {
 		return nil, err
 	}
+	fmt.Printf("NewFromRawBytes --------- value : %s\n", value)
 	msgTx := wire.NewMsgTx(2)
 	err = msgTx.Deserialize(bytes.NewReader(value))
 	if err != nil {

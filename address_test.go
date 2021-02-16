@@ -26,7 +26,7 @@ type CustomParamStruct struct {
 }
 
 var CustomParams = CustomParamStruct{
-	Net:              0xdbb6c0fb, // earthcoin mainnet HD version bytes
+	Net:              0xfdf1dbc0, // earthcoin mainnet HD version bytes
 	PubKeyHashAddrID: 0x30,       // starts with L
 	ScriptHashAddrID: 0x32,       // starts with M
 	Bech32HRPSegwit:  "eac",      // starts with eac

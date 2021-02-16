@@ -7,6 +7,7 @@ package eacutil
 import (
 	"bytes"
 	"io"
+	"fmt"
 
 	"github.com/eacsuite/eacd/chaincfg/chainhash"
 	"github.com/eacsuite/eacd/wire"
@@ -109,6 +110,9 @@ func NewTxFromBytes(serializedTx []byte) (*Tx, error) {
 // NewTxFromReader returns a new instance of a earthcoin transaction given a
 // Reader to deserialize the transaction.  See Tx.
 func NewTxFromReader(r io.Reader) (*Tx, error) {
+	
+	fmt.Printf("NewTxFromReader --------- \n")
+
 	// Deserialize the bytes into a MsgTx.
 	var msgTx wire.MsgTx
 	err := msgTx.Deserialize(r)

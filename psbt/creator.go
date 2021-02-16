@@ -19,7 +19,7 @@ const MinTxVersion = 1
 // that the default nSequence value is wire.MaxTxInSequenceNum.  Referencing
 // the PSBT BIP, this function serves the roles of teh Creator.
 func New(inputs []*wire.OutPoint,
-	outputs []*wire.TxOut, version int32, nLockTime uint32,
+	outputs []*wire.TxOut, version int32, nLockTime uint32, strTxComment string,
 	nSequences []uint32) (*Packet, error) {
 
 	// Create the new struct; the input and output lists will be empty, the
@@ -36,6 +36,7 @@ func New(inputs []*wire.OutPoint,
 
 	unsignedTx := wire.NewMsgTx(version)
 	unsignedTx.LockTime = nLockTime
+	unsignedTx.StrTxComment = strTxComment
 	for i, in := range inputs {
 		unsignedTx.AddTxIn(&wire.TxIn{
 			PreviousOutPoint: *in,
