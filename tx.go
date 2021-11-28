@@ -8,7 +8,6 @@ import (
 	"bytes"
 	"io"
 	"fmt"
-
 	"github.com/eacsuite/eacd/chaincfg/chainhash"
 	"github.com/eacsuite/eacd/wire"
 )
